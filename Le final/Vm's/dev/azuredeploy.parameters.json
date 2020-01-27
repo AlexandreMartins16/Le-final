@@ -1,0 +1,129 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "westeurope"
+    },
+    "networkInterfaceName": {
+      "value": "os-dev-vm-001715"
+    },
+    "networkSecurityGroupName": {
+      "value": "os-dev-vm-001-nsg"
+    },
+    "networkSecurityGroupRules": {
+      "value": []
+    },
+    "subnetName": {
+      "value": "subnet-dev-db"
+    },
+    "virtualNetworkName": {
+      "value": "os-dev-vnet-001"
+    },
+    "addressPrefixes": {
+      "value": [
+        "10.1.0.0/16"
+      ]
+    },
+    "subnets": {
+      "value": [
+        {
+          "name": "subnet-dev-fe",
+          "properties": {
+            "addressPrefix": "10.1.1.0/24"
+          }
+        },
+        {
+          "name": "subnet-dev-db",
+          "properties": {
+            "addressPrefix": "10.1.2.0/24"
+          }
+        }
+      ]
+    },
+    "virtualMachineName": {
+      "value": "os-dev-vm-001"
+    },
+    "virtualMachineRG": {
+      "value": "os-d-rg-001"
+    },
+    "osDiskType": {
+      "value": "StandardSSD_LRS"
+    },
+    "dataDisks": {
+      "value": [
+        {
+          "lun": 0,
+          "createOption": "attach",
+          "caching": "None",
+          "writeAcceleratorEnabled": false,
+          "id": null,
+          "name": "os-dev-vm-001_datadisk_0",
+          "storageAccountType": null,
+          "diskSizeGB": null,
+          "diskEncryptionSet": {
+            "id": null
+          }
+        },
+        {
+          "lun": 1,
+          "createOption": "attach",
+          "caching": "None",
+          "writeAcceleratorEnabled": false,
+          "id": null,
+          "name": "os-dev-vm-001_datadisk_1",
+          "storageAccountType": null,
+          "diskSizeGB": null,
+          "diskEncryptionSet": {
+            "id": null
+          }
+        }
+      ]
+    },
+    "dataDiskResources": {
+      "value": [
+        {
+          "name": "os-dev-vm-001_datadisk_0",
+          "sku": "StandardSSD_LRS",
+          "properties": {
+            "diskSizeGB": 128,
+            "creationData": {
+              "createOption": "empty"
+            }
+          }
+        },
+        {
+          "name": "os-dev-vm-001_datadisk_1",
+          "sku": "StandardSSD_LRS",
+          "properties": {
+            "diskSizeGB": 64,
+            "creationData": {
+              "createOption": "empty"
+            }
+          }
+        }
+      ]
+    },
+    "virtualMachineSize": {
+      "value": "Standard_B2s"
+    },
+    "adminUsername": {
+      "value": "vm-admin"
+    },
+    "adminPassword": {
+      "value": null
+    },
+    "diagnosticsStorageAccountName": {
+      "value": "osdrg001diag"
+    },
+    "diagnosticsStorageAccountId": {
+      "value": "Microsoft.Storage/storageAccounts/osdrg001diag"
+    },
+    "diagnosticsStorageAccountType": {
+      "value": "Standard_LRS"
+    },
+    "diagnosticsStorageAccountKind": {
+      "value": "Storage"
+    }
+  }
+}
